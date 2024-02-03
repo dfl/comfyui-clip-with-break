@@ -10,15 +10,11 @@ class CLIPTextEncodeWithBreak:
     def encode(self, clip, text):
         prompts = text.split(" BREAK ")
         prompt = prompts.pop(0)
-        print(f"{(prompt) = }")
         tokens = clip.tokenize(prompt)
         cond, pooled = clip.encode_from_tokens(tokens, return_pooled=True)
         out = [[cond, {"pooled_output": pooled}]]
-        # cond_from = conditioning_from[0][0]
-        # pooled_output_from = conditioning_from[0][1].get("pooled_output", None)
 
         for prompt in prompts:
-            print(f"{(prompt) = }")
             conditioning_from = out
             tokens = clip.tokenize(prompt)
             cond, pooled = clip.encode_from_tokens(tokens, return_pooled=True)
@@ -39,3 +35,14 @@ class CLIPTextEncodeWithBreak:
                 out.append(n)
         return (out, )
 
+
+# A dictionary that contains all nodes you want to export with their names
+# NOTE: names should be globally unique
+NODE_CLASS_MAPPINGS = {
+    "CLIPTextEncodeWithBreak": CLIPTextEncodeWithBreak
+}
+
+# A dictionary that contains the friendly/humanly readable titles for the nodes
+NODE_DISPLAY_NAME_MAPPINGS = {
+    "CLIPTextEncodeWithBreak": "CLIPTextEncode with BREAK syntax"
+}
