@@ -1,3 +1,5 @@
+import re
+
 class CLIPTextEncodeWithBreak:
     @classmethod
     def INPUT_TYPES(s):
@@ -8,7 +10,7 @@ class CLIPTextEncodeWithBreak:
     CATEGORY = "conditioning"
 
     def encode(self, clip, text):
-        prompts = text.split(" BREAK ")
+        prompts = re.split(r"\s*\bBREAK\b\s*", text) 
         prompt = prompts.pop(0)
         tokens = clip.tokenize(prompt)
         cond, pooled = clip.encode_from_tokens(tokens, return_pooled=True)
