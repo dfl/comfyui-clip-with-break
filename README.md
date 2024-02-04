@@ -1,2 +1,9 @@
 # comfyui-clip-with-break
-Clip text encoder with BREAK formatting like A1111 (uses conditioning concat)
+
+## CLIPTextEncodeWithBreak
+
+CLIP text encoder with BREAK formatting like A1111 (uses chained ComfyUI conditioning concat)
+
+## AdvancedCLIPTextEncodeWithBreak
+
+Advanced text encoding thanks to https://github.com/BlenderNeko/ComfyUI_ADV_CLIP_emb
