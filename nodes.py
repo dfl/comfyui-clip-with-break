@@ -20,8 +20,8 @@ class CLIPTextEncodeWithBreak:
         # encode and concatenate the rest of the prompt
         for prompt in prompts:
             # print(f"prompt: {prompt}")
-            cond_to = native.CLIPTextEncode.encode(self, clip, prompt)
-            out = native.ConditioningConcat.concat(self, cond_to[0], out[0])
+            cond_from = native.CLIPTextEncode.encode(self, clip, prompt)
+            out = native.ConditioningConcat.concat(self, out[0], cond_from[0])
         return out
 
 class AdvancedCLIPTextEncodeWithBreak:
