@@ -1,0 +1,14 @@
+[project]
+name = "comfyui-clip-with-break"
+description = "Clip text encoder with BREAK formatting like A1111 (uses conditioning concat)"
+version = "1.0.0"
+license = "LICENSE"
+
+[project.urls]
+Repository = "https://github.com/dfl/comfyui-clip-with-break"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "comfyui-clip-with-break"
+Icon = ""
