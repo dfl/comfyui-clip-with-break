@@ -24,5 +24,8 @@ packages = [
 [tool.setuptools.package-dir]
 "comfyui_clip_with_break" = "."
 
+[tool.setuptools.package-data]
+"*" = ["**/*.js"]
+
 [project.entry-points."comfyui.custom_nodes"]
 comfyui_clip_with_break = "comfyui_clip_with_break"
