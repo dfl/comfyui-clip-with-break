@@ -1,5 +1,5 @@
 import re
-import nodes as native
+from comfy.nodes import base_nodes as native
 from .adv_encode import advanced_encode #, advanced_encode_XL
 
 class CLIPTextEncodeWithBreak:
